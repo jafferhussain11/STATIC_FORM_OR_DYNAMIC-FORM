@@ -14,8 +14,21 @@ function saveContent(event){
                 date : event.target.dt.value
 
             }
+            
             let myobj_serial = JSON.stringify(myobj);
-            localStorage.setItem('userData',myobj_serial);
+            localStorage.setItem(myobj.email,myobj_serial);
            
+            //display
+            const newDiv = document.createElement('div');
+            newDiv.id = 'output';
+            
+            //create text node
+            const newDivText = document.createTextNode(myobj.name);
+            
+            //append to new div
+            newDiv.appendChild(newDivText);
+            newDiv.style.color = 'white';
+
+            form.insertAdjacentElement('afterend',newDiv);
             
 }
