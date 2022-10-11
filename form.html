@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY_FIRST_FORM</title>
+</head>
+<style>
+    body {
+        background-image: url('FORM_BACKgrnd.jpg');
+        background-size: cover;
+    }
+    form{
+
+        height : 450px;
+        width :40%;
+        border: 2px solid rgb(6, 216, 243);
+        background-color:white;
+        
+    }
+    input[type=text] {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+    }
+    </style>
+<body>
+    
+    
+
+    <form id="form1">
+        <h2>Book A Call</h2>
+        <label for="fname">Name:</label><br>
+        <input type="text" id="fname" name="name" value="" ><br>
+        <label for="eid">Email ID:</label><br>
+        <input type="text" id="eid" name="eid" value="" ><br>
+        <label for="pno">Phone Number:</label><br>
+        <input type="text" id="pno" name="pno" value="" ><br>
+        <label for="dt">Time For Call:</label><br>
+        <input type="datetime-local" id="dt" name="dt" ><br><br>
+        <input type="submit" value="get a call!">
+    </form>
+    <script src="scriptt.js"> </script>
+
+</body>
+</html>
