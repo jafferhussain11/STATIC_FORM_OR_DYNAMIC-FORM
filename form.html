@@ -8,15 +8,15 @@
 </head>
 <style>
     body {
-        background-image: url('FORM_BACKgrnd.jpg');
+        background-image: url('FORM_BACK.jpeg');
         background-size: cover;
     }
     form{
 
         height : 450px;
         width :40%;
-        border: 2px solid rgb(6, 216, 243);
-        background-color:white;
+        border: 2px solid rgb(0, 3, 3);
+        background-color:rgb(191, 200, 204);
         
     }
     input[type=text] {
@@ -25,16 +25,7 @@
             margin: 8px 0;
             box-sizing: border-box;
     }
-    #editbutton{
-
-        position: absolute;
-        right:1400px;
-    }
-    #deletebutton{
-
-        position: absolute;
-        right:1300px;
-    }
+    
     
 </style>
 <body>
@@ -44,16 +35,17 @@
     <form id="form1">
         <h2>Book A Call</h2>
         <label for="fname">Name:</label><br>
-        <input type="text" id="fname" name="name" value="" ><br>
+        <input type="text" id="fname" name="name" value="" required ><br>
         <label for="eid">Email ID:</label><br>
-        <input type="text" id="eid" name="eid" value="" ><br>
+        <input type="email" id="eid" name="eid" value="" required><br>
         <label for="pno">Phone Number:</label><br>
         <input type="text" id="pno" name="pno" value="" ><br>
         <label for="dt">Time For Call:</label><br>
         <input type="datetime-local" id="dt" name="dt" ><br><br>
         <input type="submit" value="get a call!">
     </form>
-    <script src="EDIT_DELETE.js"> </script>
+    <ul id='userlist'></ul>
+    <script src="scriptt.js"> </script>
 
 </body>
 </html>
