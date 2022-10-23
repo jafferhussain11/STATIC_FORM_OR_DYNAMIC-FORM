@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded',()=>{
         axios.get("https://crudcrud.com/api/2341b6809ecd406784786c0a6fd3e068/firstpost")
         .then((res)=>{
 
+                console.log(res.data);
                 for(let i=0 ;i < res.data.length; i++){
 
                         displayUser(res.data[i]);
@@ -67,9 +68,31 @@ function deleteUser(email){
 
         const userTodel = ul.querySelector('[data-email="'+email+'"]');
         //ddelete from local storage;
-        localStorage.removeItem(email);
+        //localStorage.removeItem(email);
+        //delete from CRUDCRUD ..using id how doyou get id?  i have only key
+
+        axios.get("https://crudcrud.com/api/2341b6809ecd406784786c0a6fd3e068/firstpost")
+        .then((res)=>{
+
+                const tempData = res.data;
+                for(let i=0 ; i<tempData.length; i++){
+
+                        if(tempData[i].email == email){
+
+                        axios({
+
+                                method : 'delete',
+                                url: `https://crudcrud.com/api/2341b6809ecd406784786c0a6fd3e068/firstpost/${tempData[i]._id}`,
+                                       
+                                        }).then(userTodel.remove())
+                                        .catch(err=>console.log(err));
+                        }
+                }
+
+        })
+        .catch(err=>console.log(err));
         //delete from UI
-        userTodel.remove();
+       // userTodel.remove();
 }
             
 
