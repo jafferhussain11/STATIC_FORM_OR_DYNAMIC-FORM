@@ -16,8 +16,11 @@ function saveContent(event){
             }
             
             let myobj_serial = JSON.stringify(myobj);
-            localStorage.setItem(myobj.email,myobj_serial); 
-            displayUser(myobj);
+            axios.post("https://crudcrud.com/api/2341b6809ecd406784786c0a6fd3e068/firstpost",myobj)
+            .then((res)=>displayUser(myobj))
+            .catch((err)=>console.log(err));
+            //localStorage.setItem(myobj.email,myobj_serial); 
+            
  }
 
 function  displayUser(user){
@@ -30,7 +33,7 @@ function  displayUser(user){
          ul.appendChild(newlistitem);
 
 
-}            //New div
+} 
             
 function deleteUser(email){
 
