@@ -3,6 +3,34 @@ const form = document.getElementById('form1');
 form.addEventListener('submit',saveContent);
 const ul = document.getElementById('userlist');
 
+// window.addEventListener('DOMContentLoaded',()=>{
+
+//     const localStorageObj = localStorage;
+//     const localStorageKeys = Object.keys(localStorageObj);
+
+//     for(let i=0; i<localStorageKeys.length; i++){
+
+//         const key = localStorageKeys[i];
+//         const userData = localStorageObj[key];
+//         const userDataParsed = JSON.parse(userData);
+//         displayUser(userDataParsed);
+//     }
+
+// })
+
+window.addEventListener('DOMContentLoaded',()=>{
+
+        //the result of the axios call is an object/promise , we acess the data part using res.data
+        axios.get("https://crudcrud.com/api/2341b6809ecd406784786c0a6fd3e068/firstpost")
+        .then((res)=>{
+
+                for(let i=0 ;i < res.data.length; i++){
+
+                        displayUser(res.data[i]);
+                }
+        });
+        
+})
 function saveContent(event){
 
             event.preventDefault();
